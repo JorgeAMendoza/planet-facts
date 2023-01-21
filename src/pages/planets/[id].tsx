@@ -1,10 +1,10 @@
-import NavBar from "@/components/NavBar";
+import Layout from "@/components/Layout/Layout";
+import NavBar from "@/components/NavBar/NavBar";
 
 const Planet = () => {
   return (
-    <div>
-      <NavBar />
-      <main>
+    <Layout>
+      <div>
         <section>
           <div>{/* image of planet here */}</div>
           <h1>planet name</h1>
@@ -36,8 +36,8 @@ const Planet = () => {
             <p>temp</p>
           </div>
         </section>
-      </main>
-    </div>
+      </div>
+    </Layout>
   );
 };
 
