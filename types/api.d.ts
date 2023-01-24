@@ -16,6 +16,7 @@ interface Planet {
   };
   rotation: string;
   revolution: string;
+  radius: string;
   temperature: string;
   images: {
     planet: string;
@@ -24,4 +25,4 @@ interface Planet {
   };
 }
 
-export type PlanetAPIResponse = Planet[];
+export type PlanetAPIResponse = { planetData: Planet[] };
