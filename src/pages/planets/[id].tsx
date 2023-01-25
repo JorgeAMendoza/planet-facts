@@ -2,6 +2,7 @@ import Layout from "@/components/Layout/Layout";
 import NavBar from "@/components/NavBar/NavBar";
 import { getPlanetData, getPlanetNames } from "lib/planets";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useState } from "react";
 import { Planet } from "types/api";
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -33,20 +34,44 @@ interface PlanetProps {
 }
 
 const Planet = ({ planetData }: PlanetProps) => {
+  const [infoDisplay, setInfoDisplay] = useState<
+    "overview" | "structure" | "geology"
+  >("overview");
+
   return (
     <Layout>
       <div>
         <section>
-          {/* here iterate over data and create three sections, some state will be needed to know what option is selected */}
           <div>{/* image of planet here */}</div>
           <h1>{planetData.name}</h1>
-          <p>card content</p>
-          <p>link source</p>
-
+          {/*  */}
+          {infoDisplay === "overview" ? (
+            <>
+              <p>{planetData.overview.content}</p>
+              <p>{planetData.overview.source}</p>
+            </>
+          ) : null}
+          {infoDisplay === "structure" ? (
+            <>
+              <p>{planetData.structure.content}</p>
+              <p>{planetData.structure.source}</p>
+            </>
+          ) : null}
+          {infoDisplay === "geology" ? (
+            <>
+              <p>{planetData.geology.content}</p>
+              <p>{planetData.geology.source}</p>
+            </>
+          ) : null}
+          {/*  */}
           <div>
-            <button>overview</button>
-            <button>internal structure</button>
-            <button>surface geology</button>
+            <button onClick={() => setInfoDisplay("overview")}>overview</button>
+            <button onClick={() => setInfoDisplay("structure")}>
+              internal structure
+            </button>
+            <button onClick={() => setInfoDisplay("geology")}>
+              surface geology
+            </button>
           </div>
         </section>
 
