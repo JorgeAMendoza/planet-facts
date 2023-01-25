@@ -1,9 +1,11 @@
 import axios from "axios";
 import type { PlanetAPIResponse } from "types/api";
+const HOST = process.env.HOST!;
+const PORT = process.env.PORT!;
 
 export async function getPlanetNames() {
   const { data } = await axios.get<PlanetAPIResponse>(
-    "http://localhost:3000/api/planets"
+    `${HOST}:${PORT}/api/planets`
   );
 
   const planetNames = data.planetData.map((planet) => ({
@@ -16,7 +18,7 @@ export async function getPlanetNames() {
 
 export async function getPlanetData(planetName: string) {
   const { data } = await axios.get<PlanetAPIResponse>(
-    "http://localhost:3000/api/planets"
+    `${HOST}:${PORT}/api/planets`
   );
 
   const targetPlanet = data.planetData.find(
