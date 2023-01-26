@@ -2,7 +2,7 @@ import Layout from "@/components/Layout/Layout";
 import NavBar from "@/components/NavBar/NavBar";
 import { getPlanetData, getPlanetNames } from "lib/planets";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Planet } from "types/api";
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -38,6 +38,29 @@ const Planet = ({ planetData }: PlanetProps) => {
     "overview" | "structure" | "geology"
   >("overview");
 
+  const content = useMemo(() => {
+    switch (infoDisplay) {
+      case "overview": {
+        return {
+          text: planetData.overview.content,
+          source: planetData.overview.source,
+        };
+      }
+      case "geology": {
+        return {
+          text: planetData.geology.content,
+          source: planetData.geology.source,
+        };
+      }
+      default: {
+        return {
+          text: planetData.structure.content,
+          source: planetData.structure.source,
+        };
+      }
+    }
+  }, [infoDisplay, planetData]);
+
   return (
     <Layout>
       <div>
@@ -45,25 +68,12 @@ const Planet = ({ planetData }: PlanetProps) => {
           <div>{/* image of planet here */}</div>
           <h1>{planetData.name}</h1>
           {/*  */}
-          {infoDisplay === "overview" ? (
-            <>
-              <p>{planetData.overview.content}</p>
-              <p>{planetData.overview.source}</p>
-            </>
-          ) : null}
-          {infoDisplay === "structure" ? (
-            <>
-              <p>{planetData.structure.content}</p>
-              <p>{planetData.structure.source}</p>
-            </>
-          ) : null}
-          {infoDisplay === "geology" ? (
-            <>
-              <p>{planetData.geology.content}</p>
-              <p>{planetData.geology.source}</p>
-            </>
-          ) : null}
-          {/*  */}
+          <div>
+            <p aria-live="polite">{content.text}</p>
+            <p>
+              Source: <a href={content.source}>Wikipedia</a>
+            </p>
+          </div>
           <div>
             <button onClick={() => setInfoDisplay("overview")}>overview</button>
             <button onClick={() => setInfoDisplay("structure")}>
