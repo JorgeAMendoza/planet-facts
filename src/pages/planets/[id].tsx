@@ -4,6 +4,7 @@ import { getPlanetData, getPlanetNames } from "lib/planets";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useMemo, useState } from "react";
 import { Planet } from "types/api";
+import Image from "next/image";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await getPlanetNames();
@@ -44,18 +45,21 @@ const Planet = ({ planetData }: PlanetProps) => {
         return {
           text: planetData.overview.content,
           source: planetData.overview.source,
+          image: planetData.images.planet,
         };
       }
       case "geology": {
         return {
           text: planetData.geology.content,
           source: planetData.geology.source,
+          image: planetData.images.planet,
         };
       }
       default: {
         return {
           text: planetData.structure.content,
           source: planetData.structure.source,
+          image: planetData.images.internal,
         };
       }
     }
@@ -65,7 +69,14 @@ const Planet = ({ planetData }: PlanetProps) => {
     <Layout>
       <div>
         <section>
-          <div>{/* image of planet here */}</div>
+          <div>
+            <Image
+              src={content.image}
+              alt={`Image of planet ${planetData.name}`}
+              width={64}
+              height={64}
+            />
+          </div>
           <h1>{planetData.name}</h1>
           {/*  */}
           <div>
