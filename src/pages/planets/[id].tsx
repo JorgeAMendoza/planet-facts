@@ -46,6 +46,7 @@ const Planet = ({ planetData }: PlanetProps) => {
           text: planetData.overview.content,
           source: planetData.overview.source,
           image: planetData.images.planet,
+          geologyImage: planetData.images.geology,
         };
       }
       case "geology": {
@@ -53,6 +54,7 @@ const Planet = ({ planetData }: PlanetProps) => {
           text: planetData.geology.content,
           source: planetData.geology.source,
           image: planetData.images.planet,
+          geologyImage: planetData.images.geology,
         };
       }
       default: {
@@ -60,6 +62,7 @@ const Planet = ({ planetData }: PlanetProps) => {
           text: planetData.structure.content,
           source: planetData.structure.source,
           image: planetData.images.internal,
+          geologyImage: planetData.images.geology,
         };
       }
     }
@@ -76,6 +79,17 @@ const Planet = ({ planetData }: PlanetProps) => {
               width={64}
               height={64}
             />
+
+            {infoDisplay === "geology" ? (
+              <div>
+                <Image
+                  src={content.geologyImage}
+                  alt={`geology surface of ${planetData.name}`}
+                  width={64}
+                  height={64}
+                />
+              </div>
+            ) : null}
           </div>
           <h1>{planetData.name}</h1>
           {/*  */}
