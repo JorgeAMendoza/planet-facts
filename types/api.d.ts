@@ -21,7 +21,7 @@ interface Planet {
   images: {
     planet: string;
     internal: string;
-    source: string;
+    geology: string;
   };
 }
 
