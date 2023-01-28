@@ -2,7 +2,9 @@ import Layout from "@/components/Layout/Layout";
 import NavBar from "@/components/NavBar/NavBar";
 import { getPlanetData, getPlanetNames } from "lib/planets";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useMemo, useState } from "react";
 import { Planet } from "types/api";
+import Image from "next/image";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await getPlanetNames();
@@ -33,20 +35,78 @@ interface PlanetProps {
 }
 
 const Planet = ({ planetData }: PlanetProps) => {
+  const [infoDisplay, setInfoDisplay] = useState<
+    "overview" | "structure" | "geology"
+  >("overview");
+
+  const content = useMemo(() => {
+    switch (infoDisplay) {
+      case "overview": {
+        return {
+          text: planetData.overview.content,
+          source: planetData.overview.source,
+          image: planetData.images.planet,
+          geologyImage: planetData.images.geology,
+        };
+      }
+      case "geology": {
+        return {
+          text: planetData.geology.content,
+          source: planetData.geology.source,
+          image: planetData.images.planet,
+          geologyImage: planetData.images.geology,
+        };
+      }
+      default: {
+        return {
+          text: planetData.structure.content,
+          source: planetData.structure.source,
+          image: planetData.images.internal,
+          geologyImage: planetData.images.geology,
+        };
+      }
+    }
+  }, [infoDisplay, planetData]);
+
   return (
     <Layout>
       <div>
         <section>
-          {/* here iterate over data and create three sections, some state will be needed to know what option is selected */}
-          <div>{/* image of planet here */}</div>
-          <h1>{planetData.name}</h1>
-          <p>card content</p>
-          <p>link source</p>
-
           <div>
-            <button>overview</button>
-            <button>internal structure</button>
-            <button>surface geology</button>
+            <Image
+              src={content.image}
+              alt={`Image of planet ${planetData.name}`}
+              width={64}
+              height={64}
+            />
+
+            {infoDisplay === "geology" ? (
+              <div>
+                <Image
+                  src={content.geologyImage}
+                  alt={`geology surface of ${planetData.name}`}
+                  width={64}
+                  height={64}
+                />
+              </div>
+            ) : null}
+          </div>
+          <h1>{planetData.name}</h1>
+          {/*  */}
+          <div>
+            <p aria-live="polite">{content.text}</p>
+            <p>
+              Source: <a href={content.source}>Wikipedia</a>
+            </p>
+          </div>
+          <div>
+            <button onClick={() => setInfoDisplay("overview")}>overview</button>
+            <button onClick={() => setInfoDisplay("structure")}>
+              internal structure
+            </button>
+            <button onClick={() => setInfoDisplay("geology")}>
+              surface geology
+            </button>
           </div>
         </section>
 
