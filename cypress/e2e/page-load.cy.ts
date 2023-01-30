@@ -14,14 +14,14 @@ describe("on first page load", () => {
   });
 
   it("inital redirect goes to the earth page", () => {
-    cy.location("pathname").should("contain", "earth");
+    cy.location("pathname").should("contain", "planets/earth");
   });
 
   it("page information displayed with default content", () => {
     cy.get("@planetName").should("contain.text", "earth");
     cy.get("@planetImage")
       .should("have.attr", "src")
-      .should("contain", "earth");
+      .should("contain", "planet-earth.svg");
     cy.get("@overviewContentButton").should(
       "have.css",
       "background-color",
