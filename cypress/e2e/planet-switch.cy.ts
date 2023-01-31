@@ -18,8 +18,11 @@ describe("navigate to different planet/different page", () => {
 
   for (const planet of planets) {
     it(`navigate to planet ${planet}`, () => {
-      cy.get(`[data-cy=to${planet}Link]`).click();
-      cy.location("pathname").should("contain", `planets/${planet}`);
+      cy.get(`[data-cy="to${planet}Link"]`).click();
+      cy.location("pathname").should(
+        "contain",
+        `planets/${planet.toLowerCase()}`
+      );
       cy.get('[data-cy="planetName"]').should("contain.text", planet);
     });
   }

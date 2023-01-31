@@ -4,10 +4,10 @@ describe("switching content on a planet page", () => {
   beforeEach(() => {
     cy.visit("/");
     cy.get('[data-cy="planetName"]').as("planetName");
-    cy.get('[data-cy="planeImage"]').as("planetImage");
-    cy.get('[data-cy="overviewContentButton"]').as("overviewContentButton");
-    cy.get('[data-cy="structureContentButton"]').as("structureContentButton");
-    cy.get('[data-cy="geologyContentButton"]').as("geologyContentButton");
+    cy.get('[data-cy="planetImage"]').as("planetImage");
+    cy.get('[data-cy="overviewButton"]').as("overviewContentButton");
+    cy.get('[data-cy="internalButton"]').as("structureContentButton");
+    cy.get('[data-cy="geologyButton"]').as("geologyContentButton");
     cy.get('[data-cy="rotationTime"]').as("rotationTime");
     cy.get('[data-cy="revolutionTime"]').as("revolutionTime");
     cy.get('[data-cy="radius"]').as("radius");
