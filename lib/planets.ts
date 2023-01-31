@@ -3,7 +3,7 @@ import type { PlanetAPIResponse } from "types/api";
 const HOST = process.env.HOST!;
 const PORT = process.env.PORT!;
 
-export async function getPlanetNames() {
+export async function getPlanetPaths() {
   const { data } = await axios.get<PlanetAPIResponse>(
     `${HOST}:${PORT}/api/planets`
   );

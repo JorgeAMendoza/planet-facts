@@ -1,13 +1,13 @@
 import Layout from "@/components/Layout/Layout";
 import NavBar from "@/components/NavBar/NavBar";
-import { getPlanetData, getPlanetNames } from "lib/planets";
+import { getPlanetData, getPlanetPaths } from "lib/planets";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useMemo, useState } from "react";
 import { Planet } from "types/api";
 import Image from "next/image";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = await getPlanetNames();
+  const paths = await getPlanetPaths();
   return {
     paths,
     fallback: false,
