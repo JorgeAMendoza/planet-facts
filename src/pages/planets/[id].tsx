@@ -78,6 +78,7 @@ const Planet = ({ planetData }: PlanetProps) => {
               alt={`Image of planet ${planetData.name}`}
               width={64}
               height={64}
+              data-cy="planetImage"
             />
 
             {infoDisplay === "geology" ? (
@@ -91,20 +92,34 @@ const Planet = ({ planetData }: PlanetProps) => {
               </div>
             ) : null}
           </div>
-          <h1>{planetData.name}</h1>
+          <h1 data-cy="planetName">{planetData.name}</h1>
           {/*  */}
           <div>
             <p aria-live="polite">{content.text}</p>
             <p>
-              Source: <a href={content.source}>Wikipedia</a>
+              Source:{" "}
+              <a data-cy="source" href={content.source}>
+                Wikipedia
+              </a>
             </p>
           </div>
           <div>
-            <button onClick={() => setInfoDisplay("overview")}>overview</button>
-            <button onClick={() => setInfoDisplay("structure")}>
+            <button
+              onClick={() => setInfoDisplay("overview")}
+              data-cy="overviewButton"
+            >
+              overview
+            </button>
+            <button
+              onClick={() => setInfoDisplay("structure")}
+              data-cy="internalButton"
+            >
               internal structure
             </button>
-            <button onClick={() => setInfoDisplay("geology")}>
+            <button
+              onClick={() => setInfoDisplay("geology")}
+              data-cy="geologyButton"
+            >
               surface geology
             </button>
           </div>
@@ -113,19 +128,19 @@ const Planet = ({ planetData }: PlanetProps) => {
         <section>
           <div>
             <p>rotation time</p>
-            <p>{planetData.rotation}</p>
+            <p data-cy="rotationTime">{planetData.rotation}</p>
           </div>
           <div>
             <p>revolution time</p>
-            <p>{planetData.revolution}</p>
+            <p data-cy="revolutionTime">{planetData.revolution}</p>
           </div>
           <div>
             <p>radius</p>
-            <p>{planetData.radius}</p>
+            <p data-cy="radius">{planetData.radius}</p>
           </div>
           <div>
             <p>average temp.</p>
-            <p>{planetData.temperature}</p>
+            <p data-cy="averageTemp">{planetData.temperature}</p>
           </div>
         </section>
       </div>
