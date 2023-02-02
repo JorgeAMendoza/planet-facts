@@ -1,0 +1,32 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  /* this going to be its own little menu, with it slidding to the side, etc */
+}
+
+/* tablet queries (768px) */
+@media screen and (min-width: 768px) {
+  .navBar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navLinks {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+/* laptop queries (1024px) */
+@media screen and (min-width: 1024px) {
+  .navBar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

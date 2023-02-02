@@ -1,12 +1,13 @@
 import Link from "next/link";
+import styles from "./NavBar.module.css";
 
 const NavBar = () => {
   return (
-    <header>
+    <header className={styles.navBar}>
       <p>the planets</p>
 
       <nav>
-        <ul>
+        <ul className={styles.navLinks}>
           <li>
             <Link href={`/planets/mercury`} data-cy="toMercuryLink">
               mecury
