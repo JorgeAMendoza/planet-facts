@@ -1,13 +1,13 @@
 .planetPage {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    "contentButton contentButton contentButton"
-    "planetImage planetImage planetImage"
-    "planetName planetName planetName"
-    "planetContent planetContent planetContent"
-    "stats stats stats";
+    "contentButton contentButton contentButton contentButton"
+    "planetImage planetImage planetImage planetImage"
+    "planetName planetName planetName planetName"
+    "planetContent planetContent planetContent planetContent"
+    "stats stats stats stats";
   border: 1px solid pink;
 }
 
@@ -36,4 +36,28 @@
 
 .planetName {
   grid-area: planetName;
+}
+
+/* tablet queries */
+@media screen and (min-width: 768px) {
+  .planetPage {
+    grid-template-areas:
+      "planetImage planetImage planetImage planetImage"
+      "planetName planetName contentButton contentButton"
+      "planetContent planetContent contentButton contentButton"
+      "stats stats stats stats";
+  }
+
+  .planetStats {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .planetConent {
+    text-align: left;
+  }
+
+  .buttonContainer {
+    grid-template-columns: 1fr;
+  }
 }

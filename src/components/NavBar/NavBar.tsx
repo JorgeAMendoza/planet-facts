@@ -7,7 +7,7 @@ const NavBar = () => {
       <p>the planets</p>
 
       <nav>
-        <ul>
+        <ul className={styles.navLinks}>
           <li>
             <Link href={`/planets/mercury`} data-cy="toMercuryLink">
               mecury
