@@ -1,0 +1,39 @@
+.planetPage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "contentButton contentButton contentButton"
+    "planetImage planetImage planetImage"
+    "planetName planetName planetName"
+    "planetContent planetContent planetContent"
+    "stats stats stats";
+  border: 1px solid pink;
+}
+
+.buttonContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-area: contentButton;
+}
+
+.planetImage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: planetImage;
+}
+
+.planetConent {
+  text-align: center;
+  grid-area: planetContent;
+}
+
+.planetStats {
+  grid-area: stats;
+}
+
+.planetName {
+  grid-area: planetName;
+}

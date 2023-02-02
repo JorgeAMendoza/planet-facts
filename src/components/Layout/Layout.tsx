@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { ReactNode } from "react";
 import NavBar from "../NavBar/NavBar";
+import styles from "./Layout.module.css";
 
 interface LayoutProps {
   children: ReactNode;
@@ -18,10 +19,12 @@ export default function Layout({ children }: LayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <header>
-        <NavBar />
-      </header>
-      <main>{children}</main>
+      <div className={styles.layoutContainer}>
+        <header>
+          <NavBar />
+        </header>
+        <div>{children}</div>
+      </div>
     </div>
   );
 }
