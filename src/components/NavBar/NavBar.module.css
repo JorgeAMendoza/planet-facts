@@ -1,12 +1,45 @@
 .navBar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 2.3rem;
+}
+
+.navBarLogo {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: -1.05px;
 }
 
 .navLinks {
   display: flex;
   flex-direction: column;
-  /* this going to be its own little menu, with it slidding to the side, etc */
+  display: none;
+}
+
+.mobileMenuButton {
+  background-color: transparent;
+  display: block;
+  margin-left: auto;
+}
+
+.mobileMenuButton[data-show="true"] {
+  opacity: 0.5;
+}
+
+.mobileNavBar {
+  position: absolute;
+  top: 10rem;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: none;
+}
+
+.mobileNavBar[data-show="true"] {
+  background-color: white;
+  display: block;
 }
 
 /* tablet queries (768px) */
@@ -20,6 +53,11 @@
   .navLinks {
     flex-direction: row;
     gap: 2rem;
+  }
+
+  .mobileMenuButton,
+  .mobileNavBar[data-show="true"] {
+    display: none;
   }
 }
 

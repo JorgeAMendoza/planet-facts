@@ -9,16 +9,18 @@ const NavBar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   return (
     <header className={styles.navBar}>
-      <p>the planets</p>
+      <p className={styles.navBarLogo}>the planets</p>
 
       {/* rendered on screens smaller than tablet */}
       <button
         aria-label="Click to open planet navigation menu"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
+        className={styles.mobileMenuButton}
+        data-show={showMobileMenu}
       >
         <Image src={hamburgerIcon} alt="" width={24} height={17}></Image>
       </button>
-      <nav>
+      <nav className={styles.mobileNavBar} data-show={showMobileMenu}>
         <ul>
           <li>
             <Link href="/planets/mercury" data-cy="toMercuryLink">
