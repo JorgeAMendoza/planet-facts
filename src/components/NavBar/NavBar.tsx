@@ -4,6 +4,12 @@ import styles from "./NavBar.module.css";
 import Image from "next/image";
 import hamburgerIcon from "../../../public/icon-hamburger.svg";
 import arrowIcon from "../../../public/icon-chevron.svg";
+import localFont from "@next/font/local";
+
+const spartan = localFont({
+  src: "../../../public/Spartan-Bold.ttf",
+  display: "block",
+});
 
 const NavBar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -20,8 +26,11 @@ const NavBar = () => {
       >
         <Image src={hamburgerIcon} alt="" width={24} height={17}></Image>
       </button>
-      <nav className={styles.mobileNavBar} data-show={showMobileMenu}>
-        <ul>
+      <nav
+        className={`${styles.mobileNavBar} ${spartan.className}`}
+        data-show={showMobileMenu}
+      >
+        <ul className={styles.mobileNavLinks}>
           <li>
             <Link href="/planets/mercury" data-cy="toMercuryLink">
               mercury{" "}

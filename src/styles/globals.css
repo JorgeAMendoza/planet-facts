@@ -3,12 +3,12 @@
   --dark-blue: #070724;
   --dark-grey: #38384f;
   --grey: #838391;
-  --mercury-color: #419ebb;
+  --mercury-color: #def4fc;
   --venus-color: #eda249;
   --earth-color: #6f2ed6;
   --mars-color: #d14c32;
-  --saturn-color: #cd5120;
-  --jupiter-color: #d83a34;
+  --saturn-color: #fccb6b;
+  --jupiter-color: #ecad7a;
   --uranus-color: #1ec1a2;
   --neptune-color: #2d68f0;
 }
@@ -45,6 +45,7 @@ canvas {
 }
 a {
   text-decoration: none;
+  color: var(--white);
 }
 input,
 textarea,
