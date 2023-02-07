@@ -100,10 +100,10 @@ const NavBar = () => {
 
       {/* rendered on tablet and above */}
       <nav>
-        <ul className={styles.navLinks}>
+        <ul className={`${styles.navLinks} ${spartan.className}`}>
           <li>
             <Link href={`/planets/mercury`} data-cy="toMercuryLink">
-              mecury
+              mercury
             </Link>
           </li>
           <li>
