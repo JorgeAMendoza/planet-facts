@@ -19,11 +19,13 @@ export default function Layout({ children }: LayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <div className={styles.layoutContainer}>
-        <header>
-          <NavBar />
+      <div>
+        <header className={styles.headerContainer}>
+          <div className={styles.navBarContainer}>
+            <NavBar />
+          </div>
         </header>
-        <div>{children}</div>
+        <div className={styles.layoutContainer}>{children}</div>
       </div>
     </div>
   );
