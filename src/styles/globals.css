@@ -5,12 +5,21 @@
   --grey: #838391;
   --mercury-color: #419ebb;
   --venus-color: #eda249;
-  --earth-color: #6f2ed6;
+  --earth-color: #6d2ed5;
   --mars-color: #d14c32;
   --saturn-color: #cd5120;
   --jupiter-color: #d83a34;
   --uranus-color: #1ec1a2;
   --neptune-color: #2d68f0;
+
+  --mobile-mercury-icon: #def4fc;
+  --mobile-venus-icon: #f7cc7f;
+  --mobile-earth-icon: #545bfe;
+  --mobile-mars-icon: #ff6a45;
+  --mobile-jupiter-icon: #ecad7a;
+  --mobile-saturn-icon: #fccb6b;
+  --mobile-uranus-icon: #65f0d5;
+  --mobile-neptune-icon: #497efa;
 }
 
 html {
@@ -45,6 +54,7 @@ canvas {
 }
 a {
   text-decoration: none;
+  color: var(--white);
 }
 input,
 textarea,

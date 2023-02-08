@@ -1,12 +1,119 @@
 .navBar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 2.4rem;
+}
+
+.navBarLogo {
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: -1.05px;
 }
 
 .navLinks {
+  flex-direction: row;
+  display: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+
+.mobileMenuButton {
+  background-color: transparent;
+  display: block;
+  margin-left: auto;
+}
+
+.mobileMenuButton[data-show="true"] {
+  opacity: 0.5;
+}
+
+.mobileNavBar {
+  position: absolute;
+  top: 6.9rem;
+  left: 0;
+  width: 100vw;
+  height: 80%;
+  z-index: 2;
+  display: none;
+  background-color: var(--dark-blue);
+}
+
+.mobileNavLinks {
+  padding-top: 2.3rem;
+  width: 87%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /* this going to be its own little menu, with it slidding to the side, etc */
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mobileNavLinks li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  padding-right: 0.8rem;
+  padding-left: 0;
+}
+
+.mobileNavLinks li:not(:last-of-type) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileNavLinks a {
+  padding-left: 2.6rem;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  line-height: 25px;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.mobileNavLinks li::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--mobile-mercury-icon);
+  border-radius: 50%;
+}
+
+.mobileNavLinks li:nth-of-type(2)::before {
+  background-color: var(--mobile-venus-icon);
+}
+
+.mobileNavLinks li:nth-of-type(3)::before {
+  background-color: var(--mobile-earth-icon);
+}
+
+.mobileNavLinks li:nth-of-type(4)::before {
+  background-color: var(--mobile-mars-icon);
+}
+
+.mobileNavLinks li:nth-of-type(5)::before {
+  background-color: var(--mobile-jupiter-icon);
+}
+
+.mobileNavLinks li:nth-of-type(6)::before {
+  background-color: var(--mobile-saturn-icon);
+}
+.mobileNavLinks li:nth-of-type(7)::before {
+  background-color: var(--mobile-uranus-icon);
+}
+
+.mobileNavLinks li:nth-of-type(8)::before {
+  background-color: var(--mobile-neptune-icon);
+}
+
+.mobileNavBar[data-show="true"] {
+  display: block;
 }
 
 /* tablet queries (768px) */
@@ -15,11 +122,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 4.1rem;
+    padding-top: 2.9rem;
   }
 
   .navLinks {
-    flex-direction: row;
-    gap: 2rem;
+    gap: 3.25rem;
+    display: flex;
+  }
+
+  .mobileMenuButton,
+  .mobileNavBar[data-show="true"] {
+    display: none;
   }
 }
 
@@ -28,5 +142,59 @@
   .navBar {
     flex-direction: row;
     justify-content: space-between;
+    padding: 2rem 3rem;
+    padding-bottom: 2.3rem;
+  }
+
+  .navLinks {
+    padding-top: 1rem;
+    padding-right: 1rem;
+  }
+
+  .navLinks li {
+    position: relative;
+  }
+
+  .navLinks li::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    top: -3.8rem;
+    left: 0;
+    display: none;
+  }
+
+  .navLinks li:hover::before {
+    display: block;
+  }
+
+  .navLinks li:nth-of-type(1)::before {
+    background-color: var(--mercury-color);
+  }
+  .navLinks li:nth-of-type(2)::before {
+    background-color: var(--venus-color);
+  }
+  .navLinks li:nth-of-type(3)::before {
+    background-color: var(--earth-color);
+  }
+  .navLinks li:nth-of-type(4)::before {
+    background-color: var(--mars-color);
+  }
+  .navLinks li:nth-of-type(5)::before {
+    background-color: var(--jupiter-color);
+  }
+  .navLinks li:nth-of-type(6)::before {
+    background-color: var(--saturn-color);
+  }
+  .navLinks li:nth-of-type(7)::before {
+    background-color: var(--uranus-color);
+  }
+  .navLinks li:nth-of-type(8)::before {
+    background-color: var(--neptune-color);
+  }
+
+  .navBarLogo {
+    padding-left: 0.2rem;
   }
 }
