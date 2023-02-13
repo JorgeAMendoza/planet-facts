@@ -5,7 +5,13 @@ import { useMemo, useState } from "react";
 import { Planet } from "types/api";
 import Image from "next/image";
 import styles from "../../styles/PlanetPage.module.css";
-import utilStyles from "../../styles/utils.module.css";
+import localFont from "@next/font/local";
+import clsx from "clsx";
+
+const spartan = localFont({
+  src: "../../../public/Spartan-Bold.ttf",
+  display: "block",
+});
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await getPlanetPaths();
@@ -105,24 +111,38 @@ const Planet = ({ planetData }: PlanetProps) => {
             </a>
           </p>
         </div>
-        <div className={styles.buttonContainer}>
+        <div
+          className={`${styles.buttonContainer} ${spartan.className}`}
+          data-planet={planetData.name}
+        >
           <button
             onClick={() => setInfoDisplay("overview")}
             data-cy="overviewButton"
+            className={`${styles.contentButton} ${clsx(
+              infoDisplay === "overview" && styles.buttonSelected
+            )}`}
           >
-            overview
+            <span>overview</span>
           </button>
           <button
             onClick={() => setInfoDisplay("structure")}
             data-cy="internalButton"
+            className={`${styles.contentButton} ${clsx(
+              infoDisplay === "structure" && styles.buttonSelected
+            )}`}
           >
-            internal structure
+            <span className={styles.buttonTabletText}>internal structure</span>
+            <span className={styles.buttonMobileText}>structure</span>
           </button>
           <button
             onClick={() => setInfoDisplay("geology")}
             data-cy="geologyButton"
+            className={`${styles.contentButton} ${clsx(
+              infoDisplay === "geology" && styles.buttonSelected
+            )}`}
           >
-            surface geology
+            <span className={styles.buttonTabletText}>surface geology</span>
+            <span className={styles.buttonMobileText}>surface</span>
           </button>
         </div>
 
