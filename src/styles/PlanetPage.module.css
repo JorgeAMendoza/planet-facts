@@ -5,9 +5,9 @@
   grid-template-areas:
     "contentButton contentButton contentButton contentButton"
     "planetImage planetImage planetImage planetImage"
-    "planetName planetName planetName planetName"
     "planetContent planetContent planetContent planetContent"
     "stats stats stats stats";
+  gap: 2rem;
 }
 
 .buttonContainer {
@@ -16,7 +16,7 @@
   grid-area: contentButton;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   min-height: 5rem;
-  padding: 0 .2rem;
+  padding: 0 0.2rem;
 }
 
 .contentButton {
@@ -114,19 +114,83 @@
   justify-content: center;
   align-items: center;
   grid-area: planetImage;
+  height: 26rem;
+}
+
+.planetName {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 400;
+  margin-block-end: 1.2rem;
+  text-transform: uppercase;
 }
 
 .planetConent {
+  width: 90%;
+  margin: 0 auto;
   text-align: center;
   grid-area: planetContent;
+  font-size: 1.1rem;
+  padding: 0 0.5rem;
+}
+
+.planetText {
+  line-height: 22px;
+}
+
+.planetSource {
+  opacity: 0.5;
+  margin-block-start: 1.5rem;
+  letter-spacing: 0.9px;
+}
+
+.planetSource a {
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+}
+
+.planetConent a img {
+  opacity: 1;
+  margin-left: 0.3rem;
 }
 
 .planetStats {
   grid-area: stats;
+  margin-bottom: 4rem;
+  padding: 0 0.5rem;
+  margin-block-start: 1.2rem;
 }
 
-.planetName {
-  grid-area: planetName;
+.planetStats > *:not(:last-of-type) {
+  margin-block-end: 0.8rem;
+}
+
+.stat {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 4.8rem;
+}
+
+.stat p:first-of-type {
+  opacity: 0.5;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding-bottom: 0.1rem;
+  padding-left: 2.2rem;
+}
+
+.stat p:last-of-type {
+  font-size: 2rem;
+  letter-spacing: -0.75px;
+  padding-bottom: 0.6rem;
+  padding-right: 2.3rem;
+  text-transform: uppercase;
 }
 
 /* tablet queries (768px) */

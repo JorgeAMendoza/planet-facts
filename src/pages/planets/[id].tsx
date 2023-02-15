@@ -7,9 +7,14 @@ import Image from "next/image";
 import styles from "../../styles/PlanetPage.module.css";
 import localFont from "@next/font/local";
 import clsx from "clsx";
+import sourceIcon from "../../../public/icon-source.svg";
 
 const spartan = localFont({
   src: "../../../public/Spartan-Bold.ttf",
+  display: "block",
+});
+const spartanRegular = localFont({
+  src: "../../../public/Spartan-Regular.ttf",
   display: "block",
 });
 
@@ -82,8 +87,8 @@ const Planet = ({ planetData }: PlanetProps) => {
           <Image
             src={content.image}
             alt={`Image of planet ${planetData.name}`}
-            width={64}
-            height={64}
+            width={173}
+            height={173}
             data-cy="planetImage"
           />
 
@@ -98,16 +103,29 @@ const Planet = ({ planetData }: PlanetProps) => {
             </div>
           ) : null}
         </div>
-        <h1 data-cy="planetName" className={styles.planetName}>
-          {planetData.name}
-        </h1>
+
         {/*  */}
         <div className={styles.planetConent}>
-          <p aria-live="polite">{content.text}</p>
-          <p>
+          <h1 data-cy="planetName" className={styles.planetName}>
+            {planetData.name}
+          </h1>
+          <p
+            aria-live="polite"
+            className={`${spartanRegular.className} ${styles.planetText}`}
+          >
+            {content.text}
+          </p>
+          <p className={`${styles.planetSource} ${spartanRegular.className}`}>
             Source:{" "}
-            <a data-cy="source" href={content.source}>
-              Wikipedia
+            <a
+              data-cy="source"
+              href={content.source}
+              className={`${spartan.className}`}
+            >
+              Wikipedia{" "}
+              <span>
+                <Image src={sourceIcon} width={12} height={12} alt="" />
+              </span>
             </a>
           </p>
         </div>
@@ -147,20 +165,20 @@ const Planet = ({ planetData }: PlanetProps) => {
         </div>
 
         <section className={styles.planetStats}>
-          <div>
-            <p>rotation time</p>
+          <div className={styles.stat}>
+            <p className={spartan.className}>rotation time</p>
             <p data-cy="rotationTime">{planetData.rotation}</p>
           </div>
-          <div>
-            <p>revolution time</p>
+          <div className={styles.stat}>
+            <p className={spartan.className}>revolution time</p>
             <p data-cy="revolutionTime">{planetData.revolution}</p>
           </div>
-          <div>
-            <p>radius</p>
+          <div className={styles.stat}>
+            <p className={spartan.className}>radius</p>
             <p data-cy="radius">{planetData.radius}</p>
           </div>
-          <div>
-            <p>average temp.</p>
+          <div className={styles.stat}>
+            <p className={spartan.className}>average temp.</p>
             <p data-cy="averageTemp">{planetData.temperature}</p>
           </div>
         </section>
