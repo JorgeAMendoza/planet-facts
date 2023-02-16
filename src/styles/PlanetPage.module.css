@@ -1,13 +1,14 @@
 .planetPage {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: 5rem 25.6rem 23.5rem 21.6rem;
   grid-template-areas:
     "contentButton contentButton contentButton contentButton"
     "planetImage planetImage planetImage planetImage"
     "planetContent planetContent planetContent planetContent"
     "stats stats stats stats";
-  gap: 2rem;
+  gap: 2.25rem;
+  padding-bottom: 4.5rem;
 }
 
 .buttonContainer {
@@ -168,6 +169,8 @@
   grid-area: planetContent;
   font-size: 1.1rem;
   padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .planetText {
@@ -176,8 +179,8 @@
 
 .planetSource {
   opacity: 0.5;
-  margin-block-start: 1.5rem;
   letter-spacing: 0.9px;
+  margin-top: auto;
 }
 
 .planetSource a {
