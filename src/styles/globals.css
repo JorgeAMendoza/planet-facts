@@ -41,7 +41,9 @@ body {
   font-size: 1.6rem;
   min-height: 100%;
   position: relative;
-  background-color: var(--dark-blue);
+  background: url("../../public//background-stars.svg") no-repeat center
+      center/cover,
+    var(--dark-blue);
   color: var(--white);
 }
 img,
