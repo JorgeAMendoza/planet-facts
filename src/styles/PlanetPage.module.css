@@ -117,6 +117,42 @@
   height: 26rem;
 }
 
+.planetImage img {
+  height: auto;
+}
+
+.planetImage[data-planet="Mercury"] img {
+  width: 11.1rem;
+}
+
+.planetImage[data-planet="Venus"] img {
+  width: 15.4rem;
+}
+
+.planetImage[data-planet="Earth"] img {
+  width: 17.3rem;
+}
+
+.planetImage[data-planet="Mars"] img {
+  width: 12.9rem;
+}
+
+.planetImage[data-planet="Jupiter"] img {
+  width: 22.4rem;
+}
+
+.planetImage[data-planet="Saturn"] img {
+  width: 25.6rem;
+}
+
+.planetImage[data-planet="Uranus"] img {
+  width: 17.6rem;
+}
+
+.planetImage[data-planet="Neptume"] img {
+  width: 17.3rem;
+}
+
 .planetName {
   text-align: center;
   font-size: 4rem;

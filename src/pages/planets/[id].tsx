@@ -83,7 +83,7 @@ const Planet = ({ planetData }: PlanetProps) => {
   return (
     <Layout>
       <main className={`${styles.planetPage} `}>
-        <div className={styles.planetImage}>
+        <div className={styles.planetImage} data-planet={planetData.name}>
           <Image
             src={content.image}
             alt={`Image of planet ${planetData.name}`}
