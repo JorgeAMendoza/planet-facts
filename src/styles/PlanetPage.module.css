@@ -199,11 +199,9 @@
   grid-area: stats;
   margin-bottom: 4rem;
   padding: 0 0.5rem;
-  margin-block-start: 1.2rem;
-}
-
-.planetStats > *:not(:last-of-type) {
-  margin-block-end: 0.8rem;
+  margin-block-start: 1rem;
+  display: grid;
+  gap: .8rem;
 }
 
 .stat {
