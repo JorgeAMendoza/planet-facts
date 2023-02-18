@@ -140,7 +140,10 @@ const Planet = ({ planetData }: PlanetProps) => {
               infoDisplay === "overview" && styles.buttonSelected
             )}`}
           >
-            <span>overview</span>
+            <span className={styles.buttonMobileText}>overview</span>
+            <span className={styles.buttonTabletText}>
+              <span>01</span>overview
+            </span>
           </button>
           <button
             onClick={() => setInfoDisplay("structure")}
@@ -149,7 +152,9 @@ const Planet = ({ planetData }: PlanetProps) => {
               infoDisplay === "structure" && styles.buttonSelected
             )}`}
           >
-            <span className={styles.buttonTabletText}>internal structure</span>
+            <span className={styles.buttonTabletText}>
+              <span>02</span>internal structure
+            </span>
             <span className={styles.buttonMobileText}>structure</span>
           </button>
           <button
@@ -159,7 +164,9 @@ const Planet = ({ planetData }: PlanetProps) => {
               infoDisplay === "geology" && styles.buttonSelected
             )}`}
           >
-            <span className={styles.buttonTabletText}>surface geology</span>
+            <span className={styles.buttonTabletText}>
+              <span>03</span>surface geology
+            </span>
             <span className={styles.buttonMobileText}>surface</span>
           </button>
         </div>
