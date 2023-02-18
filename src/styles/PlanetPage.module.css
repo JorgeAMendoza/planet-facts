@@ -201,7 +201,7 @@
   padding: 0 0.5rem;
   margin-block-start: 1rem;
   display: grid;
-  gap: .8rem;
+  gap: 0.8rem;
 }
 
 .stat {
@@ -279,11 +279,6 @@
 
   .planetImage[data-planet="Neptune"] img {
     width: 28.5rem;
-  }
-
-  .planetStats {
-    display: flex;
-    justify-content: space-between;
   }
 
   .planetConent {
@@ -397,12 +392,19 @@
     height: auto;
     flex-direction: column;
     align-items: start;
-    justify-content: center;
+    justify-content: start;
     padding-left: 1.5rem;
+    padding-top: 1.9rem;
   }
 
   .stat p:first-of-type {
     padding: 0;
+  }
+
+  .stat p:last-of-type {
+    padding: 0;
+    font-size: 2.4rem;
+    padding-top: 0.6rem;
   }
 }
 
