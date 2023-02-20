@@ -411,10 +411,70 @@
 /* laptop queries (1024px) */
 @media screen and (min-width: 1024px) {
   .planetPage {
+    width: 100%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 12.8rem;
     grid-template-areas:
-      "planetImage planetImage planetName planetName"
-      "planetImage planetImage planetContent planetContent"
-      "planetImage planetImage contentButton contentButton"
-      "stats stats stats stats";
+      "planetImage planetContent"
+      "planetImage contentButton"
+      "stats stats";
+    border: 1px solid white;
+    height: 81.2rem;
+    margin-block-start: 7.45rem;
+    padding: 0;
+  }
+
+  .planetImage {
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+    align-self: center;
+    padding: 0;
+    margin-left: -9.9rem;
+    margin-top: -3.8rem;
+  }
+
+  .planetImage[data-planet="Saturn"] {
+    margin-top: -0.7rem;
+  }
+
+  .planetName {
+    font-size: 8rem;
+  }
+
+  .planetConent {
+    font-size: 1.4rem;
+  }
+
+  .planetImage[data-planet="Mercury"] img {
+    width: 29rem;
+  }
+
+  .planetImage[data-planet="Venus"] img {
+    width: 40rem;
+  }
+
+  .planetImage[data-planet="Earth"] img {
+    width: 45rem;
+  }
+
+  .planetImage[data-planet="Mars"] img {
+    width: 33.6rem;
+  }
+
+  .planetImage[data-planet="Jupiter"] img {
+    width: 58.2rem;
+  }
+
+  .planetImage[data-planet="Saturn"] img {
+    width: 66.609rem;
+  }
+
+  .planetImage[data-planet="Uranus"] img {
+    width: 45.8rem;
+  }
+
+  .planetImage[data-planet="Neptune"] img {
+    width: 45rem;
   }
 }
