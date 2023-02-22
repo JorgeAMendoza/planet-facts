@@ -494,7 +494,30 @@
   }
 
   .contentButton .buttonTabletText > span:last-of-type {
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
+  }
+
+  .planetStats {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    grid-template-columns: repeat(4, 25.5rem);
+    justify-content: space-between;
+    margin-top: -0.5rem;
+  }
+
+  .stat {
+    height: 12.8rem;
+    padding-left: 2.2rem;
+    padding-top: 2.4rem;
+  }
+
+  .stat p:first-of-type {
+    font-size: 1.1rem;
+  }
+
+  .stat p:last-of-type {
+    font-size: 4rem;
+    letter-spacing: -1.5px;
   }
 
   .planetImage[data-planet="Mercury"] img {
