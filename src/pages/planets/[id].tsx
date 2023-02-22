@@ -93,7 +93,7 @@ const Planet = ({ planetData }: PlanetProps) => {
           />
 
           {infoDisplay === "geology" ? (
-            <div>
+            <div className={styles.geologyImage}>
               <Image
                 src={content.geologyImage}
                 alt={`geology surface of ${planetData.name}`}
