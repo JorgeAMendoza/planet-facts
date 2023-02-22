@@ -140,10 +140,11 @@ const Planet = ({ planetData }: PlanetProps) => {
               infoDisplay === "overview" && styles.buttonSelected
             )}`}
           >
-            <span className={styles.buttonMobileText}>overview</span>
-            <span className={styles.buttonTabletText}>
-              <span>01</span>overview
-            </span>
+            <p className={styles.buttonMobileText}>overview</p>
+            <p className={styles.buttonTabletText}>
+              <span>01</span>
+              <span>overview</span>
+            </p>
           </button>
           <button
             onClick={() => setInfoDisplay("structure")}
@@ -152,10 +153,11 @@ const Planet = ({ planetData }: PlanetProps) => {
               infoDisplay === "structure" && styles.buttonSelected
             )}`}
           >
-            <span className={styles.buttonTabletText}>
-              <span>02</span>internal structure
-            </span>
-            <span className={styles.buttonMobileText}>structure</span>
+            <p className={styles.buttonTabletText}>
+              <span>02</span>
+              <span>internal structure</span>
+            </p>
+            <p className={styles.buttonMobileText}>structure</p>
           </button>
           <button
             onClick={() => setInfoDisplay("geology")}
@@ -164,10 +166,11 @@ const Planet = ({ planetData }: PlanetProps) => {
               infoDisplay === "geology" && styles.buttonSelected
             )}`}
           >
-            <span className={styles.buttonTabletText}>
-              <span>03</span>surface geology
-            </span>
-            <span className={styles.buttonMobileText}>surface</span>
+            <p className={styles.buttonTabletText}>
+              <span>03</span>
+              <span>surface geology</span>
+            </p>
+            <p className={styles.buttonMobileText}>surface</p>
           </button>
         </div>
 
