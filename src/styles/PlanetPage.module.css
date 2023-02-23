@@ -27,13 +27,10 @@
   font-size: 0.9rem;
   letter-spacing: 1.9px;
   opacity: 0.5;
-}
-
-.contentButton span {
   position: relative;
 }
 
-.contentButton span::before {
+.contentButton p::before {
   position: absolute;
   content: "";
   height: 4px;
@@ -41,62 +38,61 @@
   left: 49%;
   top: 2.7rem;
   transform: translate(-50%, 0);
-  background-color: red;
   display: none;
 }
 
 .contentButton.buttonSelected {
   opacity: 1;
 }
-.contentButton.buttonSelected span::before {
+.contentButton.buttonSelected p::before {
   display: block;
 }
 
 .buttonContainer[data-planet="Earth"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--earth-color);
 }
 
 .buttonContainer[data-planet="Mercury"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--mercury-color);
 }
 
 .buttonContainer[data-planet="Venus"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--venus-color);
 }
 
 .buttonContainer[data-planet="Mars"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--mars-color);
 }
 
 .buttonContainer[data-planet="Saturn"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--saturn-color);
 }
 
 .buttonContainer[data-planet="Jupiter"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--jupiter-color);
 }
 
 .buttonContainer[data-planet="Uranus"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--uranus-color);
 }
 
 .buttonContainer[data-planet="Neptune"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--neptune-color);
 }
 
