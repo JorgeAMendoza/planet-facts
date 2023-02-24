@@ -32,11 +32,11 @@
 }
 
 .mobileNavBar {
-  position: absolute;
-  top: 6.9rem;
+  position: fixed;
+  top: 6.5rem;
   left: 0;
   width: 100vw;
-  height: 80%;
+  height: 100vh;
   z-index: 2;
   display: none;
   background-color: var(--dark-blue);

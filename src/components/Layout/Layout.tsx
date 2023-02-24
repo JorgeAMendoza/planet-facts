@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { ReactNode } from "react";
+import { ReactNode, useCallback, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import styles from "./Layout.module.css";
 
@@ -8,6 +8,7 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
+  const [showMenu, setShowMenu] = useState(false);
   return (
     <div>
       <Head>
@@ -22,7 +23,7 @@ export default function Layout({ children }: LayoutProps) {
       <div>
         <header className={styles.headerContainer}>
           <div className={styles.navBarContainer}>
-            <NavBar />
+            <NavBar showMenu={showMenu} setShowMenu={setShowMenu} />
           </div>
         </header>
         <div className={styles.layoutContainer}>{children}</div>

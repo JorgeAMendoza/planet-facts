@@ -1,18 +1,22 @@
-import { useState } from "react";
 import Link from "next/link";
 import styles from "./NavBar.module.css";
 import Image from "next/image";
 import hamburgerIcon from "../../../public/icon-hamburger.svg";
 import arrowIcon from "../../../public/icon-chevron.svg";
 import localFont from "@next/font/local";
+import { SetStateAction } from "react";
 
 const spartan = localFont({
   src: "../../../public/Spartan-Bold.ttf",
   display: "block",
 });
 
-const NavBar = () => {
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
+interface NavBarProps {
+  showMenu: boolean;
+  setShowMenu: React.Dispatch<SetStateAction<boolean>>;
+}
+
+const NavBar = ({ showMenu, setShowMenu }: NavBarProps) => {
   return (
     <header className={styles.navBar}>
       <p className={styles.navBarLogo}>the planets</p>
@@ -20,17 +24,28 @@ const NavBar = () => {
       {/* rendered on screens smaller than tablet */}
       <button
         aria-label="Click to open planet navigation menu"
-        onClick={() => setShowMobileMenu(!showMobileMenu)}
+        onClick={() => {
+          if (showMenu) {
+            document.body.classList.remove("overflow");
+            setShowMenu(false);
+          } else {
+            document.body.classList.add("overflow");
+            setShowMenu(true);
+          }
+        }}
         className={styles.mobileMenuButton}
-        data-show={showMobileMenu}
+        data-show={showMenu}
+        tabIndex={0}
+        aria-controls="mobile-nav"
       >
         <Image src={hamburgerIcon} alt="" width={24} height={17}></Image>
       </button>
       <nav
+        id="mobile-nav"
         className={`${styles.mobileNavBar} ${spartan.className}`}
-        data-show={showMobileMenu}
+        data-show={showMenu}
       >
-        <ul className={styles.mobileNavLinks}>
+        <ul className={styles.mobileNavLinks} role="list">
           <li>
             <Link href="/planets/mercury" data-cy="toMercuryLink">
               mercury{" "}
