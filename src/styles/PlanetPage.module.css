@@ -27,13 +27,10 @@
   font-size: 0.9rem;
   letter-spacing: 1.9px;
   opacity: 0.5;
-}
-
-.contentButton span {
   position: relative;
 }
 
-.contentButton span::before {
+.contentButton p::before {
   position: absolute;
   content: "";
   height: 4px;
@@ -41,62 +38,61 @@
   left: 49%;
   top: 2.7rem;
   transform: translate(-50%, 0);
-  background-color: red;
   display: none;
 }
 
 .contentButton.buttonSelected {
   opacity: 1;
 }
-.contentButton.buttonSelected span::before {
+.contentButton.buttonSelected p::before {
   display: block;
 }
 
 .buttonContainer[data-planet="Earth"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--earth-color);
 }
 
 .buttonContainer[data-planet="Mercury"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--mercury-color);
 }
 
 .buttonContainer[data-planet="Venus"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--venus-color);
 }
 
 .buttonContainer[data-planet="Mars"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--mars-color);
 }
 
 .buttonContainer[data-planet="Saturn"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--saturn-color);
 }
 
 .buttonContainer[data-planet="Jupiter"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--jupiter-color);
 }
 
 .buttonContainer[data-planet="Uranus"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--uranus-color);
 }
 
 .buttonContainer[data-planet="Neptune"]
   .contentButton.buttonSelected
-  span::before {
+  p::before {
   background-color: var(--neptune-color);
 }
 
@@ -123,35 +119,45 @@
   height: auto;
 }
 
-.planetImage[data-planet="Mercury"] img {
+.geologyImage {
+  position: absolute;
+  top: 50%;
+}
+
+.geologyImage > img {
+  width: 8rem;
+  height: 10.9rem;
+}
+
+.planetImage[data-planet="Mercury"] > img {
   width: 11.1rem;
 }
 
-.planetImage[data-planet="Venus"] img {
+.planetImage[data-planet="Venus"] > img {
   width: 15.4rem;
 }
 
-.planetImage[data-planet="Earth"] img {
+.planetImage[data-planet="Earth"] > img {
   width: 17.3rem;
 }
 
-.planetImage[data-planet="Mars"] img {
+.planetImage[data-planet="Mars"] > img {
   width: 12.9rem;
 }
 
-.planetImage[data-planet="Jupiter"] img {
+.planetImage[data-planet="Jupiter"] > img {
   width: 22.4rem;
 }
 
-.planetImage[data-planet="Saturn"] img {
+.planetImage[data-planet="Saturn"] > img {
   width: 25.6rem;
 }
 
-.planetImage[data-planet="Uranus"] img {
+.planetImage[data-planet="Uranus"] > img {
   width: 17.6rem;
 }
 
-.planetImage[data-planet="Neptune"] img {
+.planetImage[data-planet="Neptune"] > img {
   width: 17.3rem;
 }
 
@@ -249,35 +255,40 @@
     padding-top: 4.5rem;
   }
 
-  .planetImage[data-planet="Mercury"] img {
+  .geologyImage > img {
+    width: 13.3rem;
+    height: 16.9rem;
+  }
+
+  .planetImage[data-planet="Mercury"] > img {
     width: 18.4rem;
   }
 
-  .planetImage[data-planet="Venus"] img {
+  .planetImage[data-planet="Venus"] > img {
     width: 25.3rem;
   }
 
-  .planetImage[data-planet="Earth"] img {
+  .planetImage[data-planet="Earth"] > img {
     width: 28.5rem;
   }
 
-  .planetImage[data-planet="Mars"] img {
+  .planetImage[data-planet="Mars"] > img {
     width: 21.3rem;
   }
 
-  .planetImage[data-planet="Jupiter"] img {
+  .planetImage[data-planet="Jupiter"] > img {
     width: 36.9rem;
   }
 
-  .planetImage[data-planet="Saturn"] img {
+  .planetImage[data-planet="Saturn"] > img {
     width: 42.2rem;
   }
 
-  .planetImage[data-planet="Uranus"] img {
+  .planetImage[data-planet="Uranus"] > img {
     width: 29rem;
   }
 
-  .planetImage[data-planet="Neptune"] img {
+  .planetImage[data-planet="Neptune"] > img {
     width: 28.5rem;
   }
 
@@ -444,6 +455,11 @@
     margin-top: -0.7rem;
   }
 
+  .geologyImage > img {
+    width: 16.3rem;
+    height: 19.9rem;
+  }
+
   .planetName {
     font-size: 8rem;
   }
@@ -520,35 +536,67 @@
     letter-spacing: -1.5px;
   }
 
-  .planetImage[data-planet="Mercury"] img {
+  .planetImage[data-planet="Mercury"] > img {
     width: 29rem;
   }
 
-  .planetImage[data-planet="Venus"] img {
+  .planetImage[data-planet="Venus"] > img {
     width: 40rem;
   }
 
-  .planetImage[data-planet="Earth"] img {
+  .planetImage[data-planet="Earth"] > img {
     width: 45rem;
   }
 
-  .planetImage[data-planet="Mars"] img {
+  .planetImage[data-planet="Mars"] > img {
     width: 33.6rem;
   }
 
-  .planetImage[data-planet="Jupiter"] img {
+  .planetImage[data-planet="Jupiter"] > img {
     width: 58.2rem;
   }
 
-  .planetImage[data-planet="Saturn"] img {
+  .planetImage[data-planet="Saturn"] > img {
     width: 66.609rem;
   }
 
-  .planetImage[data-planet="Uranus"] img {
+  .planetImage[data-planet="Uranus"] > img {
     width: 45.8rem;
   }
 
-  .planetImage[data-planet="Neptune"] img {
+  .planetImage[data-planet="Neptune"] > img {
     width: 45rem;
+  }
+
+  .planetImage[data-planet="Mercury"] .geologyImage {
+    top: 79%;
+  }
+
+  .planetImage[data-planet="Venus"] .geologyImage {
+    top: 70%;
+  }
+
+  .planetImage[data-planet="Earth"] .geologyImage {
+    top: 68%;
+  }
+
+  .planetImage[data-planet="Mars"] .geologyImage {
+    top: 74%;
+  }
+
+  .planetImage[data-planet="Jupiter"] .geologyImage {
+    top: 64%;
+  }
+
+  .planetImage[data-planet="Saturn"] .geologyImage {
+    top: 60%;
+  }
+
+  .planetImage[data-planet="Uranus"] .geologyImage {
+    top: 68%;
+  }
+
+  .planetImage[data-planet="Neptune"] .geologyImage {
+    top: 68%;
   }
 }

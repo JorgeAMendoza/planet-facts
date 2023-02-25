@@ -90,15 +90,18 @@ const Planet = ({ planetData }: PlanetProps) => {
             width={173}
             height={173}
             data-cy="planetImage"
+            sizes="(min-width: 768px) 50vw,
+                      (min-width: 1024px) 100vw,
+                      33vw"
           />
 
           {infoDisplay === "geology" ? (
-            <div>
+            <div className={styles.geologyImage}>
               <Image
                 src={content.geologyImage}
                 alt={`geology surface of ${planetData.name}`}
-                width={64}
-                height={64}
+                width={66}
+                height={66}
               />
             </div>
           ) : null}
