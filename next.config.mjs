@@ -4,7 +4,7 @@ const nextConfig = {
   redirects: async () => [
     {
       source: "/",
-      destination: "/planets/earth",
+      destination: "/planets/mercury",
       permanent: process.env.NODE_ENV === "development" ? false : true,
     },
   ],
