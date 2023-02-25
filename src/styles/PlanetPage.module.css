@@ -48,9 +48,7 @@
   display: block;
 }
 
-.buttonContainer[data-planet="Earth"]
-  .contentButton.buttonSelected
-  p::before {
+.buttonContainer[data-planet="Earth"] .contentButton.buttonSelected p::before {
   background-color: var(--earth-color);
 }
 
@@ -60,21 +58,15 @@
   background-color: var(--mercury-color);
 }
 
-.buttonContainer[data-planet="Venus"]
-  .contentButton.buttonSelected
-  p::before {
+.buttonContainer[data-planet="Venus"] .contentButton.buttonSelected p::before {
   background-color: var(--venus-color);
 }
 
-.buttonContainer[data-planet="Mars"]
-  .contentButton.buttonSelected
-  p::before {
+.buttonContainer[data-planet="Mars"] .contentButton.buttonSelected p::before {
   background-color: var(--mars-color);
 }
 
-.buttonContainer[data-planet="Saturn"]
-  .contentButton.buttonSelected
-  p::before {
+.buttonContainer[data-planet="Saturn"] .contentButton.buttonSelected p::before {
   background-color: var(--saturn-color);
 }
 
@@ -84,9 +76,7 @@
   background-color: var(--jupiter-color);
 }
 
-.buttonContainer[data-planet="Uranus"]
-  .contentButton.buttonSelected
-  p::before {
+.buttonContainer[data-planet="Uranus"] .contentButton.buttonSelected p::before {
   background-color: var(--uranus-color);
 }
 
@@ -258,6 +248,10 @@
   .geologyImage > img {
     width: 13.3rem;
     height: 16.9rem;
+  }
+
+  .contentButton.buttonSelected p::before {
+    display: none;
   }
 
   .planetImage[data-planet="Mercury"] > img {
