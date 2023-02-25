@@ -20,29 +20,27 @@ describe("on first page load", () => {
     cy.get('[data-cy="source"]').as("source");
   });
 
-  it("inital redirect goes to the earth page", () => {
-    cy.location("pathname").should("contain", "planets/earth");
+  it("inital redirect goes to the mercury page", () => {
+    cy.location("pathname").should("contain", "planets/mercury");
   });
 
-  it.skip("page information displayed with default content", () => {
-    cy.get("@planetName").should("contain.text", "Earth");
+  it("page information displayed with default content", () => {
+    cy.get("@planetName").should("contain.text", "Mercury");
     cy.get("@planetImage")
       .should("have.attr", "src")
-      .should("contain", "planet-earth.svg");
+      .should("contain", "planet-mercury.svg");
     cy.get("@overviewContentButton").should(
       "have.css",
       "background-color",
-      hexToRgb("6D2ED5")
+      hexToRgb("419EBB")
     );
     cy.get("@source")
       .should("have.attr", "href")
-      .and("contain", "https://en.wikipedia.org/wiki/Earth");
+      .and("contain", "https://en.wikipedia.org/wiki/Mercury");
 
-    cy.get("@rotationTime").should("contain.text", "0.99 days");
-    cy.get("@revolutionTime").should("contain.text", "365.26 days");
-    cy.get("@radius").should("contain.text", "6,371 KM");
-    cy.get("@averageTemp").should("contain.text", "16°C");
-
-    cy.get("base");
+    cy.get("@rotationTime").should("contain.text", "58.6 Days");
+    cy.get("@revolutionTime").should("contain.text", "87.97 Days");
+    cy.get("@radius").should("contain.text", "2,439.7 KM");
+    cy.get("@averageTemp").should("contain.text", "430°c");
   });
 });
