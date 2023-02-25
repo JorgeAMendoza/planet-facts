@@ -1,7 +1,8 @@
 import Head from "next/head";
-import { ReactNode, useCallback, useState } from "react";
+import { ReactNode, useCallback, useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import styles from "./Layout.module.css";
+import useIsMobile from "@/hooks/useMedia";
 
 interface LayoutProps {
   children: ReactNode;
@@ -9,6 +10,12 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const [showMenu, setShowMenu] = useState(false);
+  const isMobile = useIsMobile();
+
+  useEffect(() => {
+    if (!isMobile) document.body.classList.remove("overflow");
+    setShowMenu(false);
+  }, [isMobile]);
   return (
     <div>
       <Head>
