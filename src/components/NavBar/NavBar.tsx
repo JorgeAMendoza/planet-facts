@@ -47,7 +47,7 @@ const NavBar = ({ showMenu, setShowMenu }: NavBarProps) => {
       >
         <ul className={styles.mobileNavLinks} role="list">
           <li>
-            <Link href="/planets/mercury" data-cy="toMercuryLink">
+            <Link href="/planets/mercury" data-cy="toMercuryLinkMobile">
               mercury{" "}
               <span>
                 <Image src={arrowIcon} alt="" width={4} height={8} />
@@ -55,7 +55,7 @@ const NavBar = ({ showMenu, setShowMenu }: NavBarProps) => {
             </Link>
           </li>
           <li>
-            <Link href="/planets/venus" data-cy="toVenusLink">
+            <Link href="/planets/venus" data-cy="toVenusLinkMobile">
               venus{" "}
               <span>
                 <Image src={arrowIcon} alt="" width={4} height={8} />
@@ -63,7 +63,7 @@ const NavBar = ({ showMenu, setShowMenu }: NavBarProps) => {
             </Link>
           </li>
           <li>
-            <Link href="/planets/earth" data-cy="toEarthLink">
+            <Link href="/planets/earth" data-cy="toEarthLinkMobile">
               earth{" "}
               <span>
                 <Image src={arrowIcon} alt="" width={4} height={8} />
@@ -71,7 +71,7 @@ const NavBar = ({ showMenu, setShowMenu }: NavBarProps) => {
             </Link>
           </li>
           <li>
-            <Link href="/planets/mars" data-cy="toMarsLink">
+            <Link href="/planets/mars" data-cy="toMarsLinkMobile">
               mars{" "}
               <span>
                 <Image src={arrowIcon} alt="" width={4} height={8} />
@@ -79,7 +79,7 @@ const NavBar = ({ showMenu, setShowMenu }: NavBarProps) => {
             </Link>
           </li>
           <li>
-            <Link href="/planets/jupiter" data-cy="toJupiterLink">
+            <Link href="/planets/jupiter" data-cy="toJupiterLinkMobile">
               jupiter{" "}
               <span>
                 <Image src={arrowIcon} alt="" width={4} height={8} />
@@ -87,7 +87,7 @@ const NavBar = ({ showMenu, setShowMenu }: NavBarProps) => {
             </Link>
           </li>
           <li>
-            <Link href="/planets/saturn" data-cy="toSaturnLink">
+            <Link href="/planets/saturn" data-cy="toSaturnLinkMobile">
               saturn{" "}
               <span>
                 <Image src={arrowIcon} alt="" width={4} height={8} />
@@ -95,7 +95,7 @@ const NavBar = ({ showMenu, setShowMenu }: NavBarProps) => {
             </Link>
           </li>
           <li>
-            <Link href="/planets/uranus" data-cy="toUranusLink">
+            <Link href="/planets/uranus" data-cy="toUranusLinkMobile">
               uranus{" "}
               <span>
                 <Image src={arrowIcon} alt="" width={4} height={8} />
@@ -103,7 +103,7 @@ const NavBar = ({ showMenu, setShowMenu }: NavBarProps) => {
             </Link>
           </li>
           <li>
-            <Link href="/planets/neptune" data-cy="toUranusLink">
+            <Link href="/planets/neptune" data-cy="toUranusLinkMobile">
               neptune{" "}
               <span>
                 <Image src={arrowIcon} alt="" width={4} height={8} />
