@@ -8,6 +8,7 @@ import styles from "../../styles/PlanetPage.module.css";
 import localFont from "@next/font/local";
 import clsx from "clsx";
 import sourceIcon from "../../../public/icon-source.svg";
+import Head from "next/head";
 
 const spartan = localFont({
   src: "../../../public/Spartan-Bold.ttf",
@@ -81,12 +82,17 @@ const Planet = ({ planetData }: PlanetProps) => {
       }
     }
   }, [infoDisplay, planetData]);
+  const pageTitle = `The Planets: ${planetData.name}`;
 
   return (
     <Layout>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
       <main className={`${styles.planetPage} `}>
         <div className={styles.planetImage} data-planet={planetData.name}>
           <Image
+            priority={true}
             src={content.image}
             alt={`Image of planet ${planetData.name}`}
             width={173}
