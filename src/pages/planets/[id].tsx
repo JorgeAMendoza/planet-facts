@@ -102,6 +102,7 @@ const Planet = ({ planetData }: PlanetProps) => {
                 alt={`geology surface of ${planetData.name}`}
                 width={66}
                 height={66}
+                data-cy="geologyImage"
               />
             </div>
           ) : null}

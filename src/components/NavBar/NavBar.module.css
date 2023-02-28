@@ -133,8 +133,9 @@
   }
 
   .mobileMenuButton,
-  .mobileNavBar[data-show="true"] {
+  .mobileNavBar {
     display: none;
+    visibility: hidden;
   }
 }
 
