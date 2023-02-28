@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout/Layout";
 import { getPlanetData, getPlanetPaths } from "lib/planets";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { Planet } from "types/api";
 import Image from "next/image";
 import styles from "../../styles/PlanetPage.module.css";
@@ -50,6 +50,8 @@ const Planet = ({ planetData }: PlanetProps) => {
   const [infoDisplay, setInfoDisplay] = useState<
     "overview" | "structure" | "geology"
   >("overview");
+
+  useEffect(() => setInfoDisplay("overview"), [planetData]);
 
   const content = useMemo(() => {
     switch (infoDisplay) {

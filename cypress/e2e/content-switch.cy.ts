@@ -66,4 +66,25 @@ describe("switching content on a planet page", () => {
       .should("have.attr", "src")
       .should("contain", "geology-mercury.png");
   });
+
+  it("page switch, page is displaying overview content", () => {
+    cy.get("@geologyContentButton").click();
+    cy.get("@overviewContentButton").should(
+      "have.css",
+      "background-color",
+      "rgba(0, 0, 0, 0)"
+    );
+
+    cy.get('[data-cy="toEarthLink"]').click();
+    cy.get("@overviewContentButton").should(
+      "have.css",
+      "background-color",
+      hexToRgb("6D2ED5")
+    );
+    cy.get("@geologyContentButton").should(
+      "have.css",
+      "background-color",
+      "rgba(0, 0, 0, 0)"
+    );
+  });
 });
