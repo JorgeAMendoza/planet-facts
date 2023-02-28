@@ -23,7 +23,9 @@ const NavBar = ({ showMenu, setShowMenu }: NavBarProps) => {
 
       {/* rendered on screens smaller than tablet */}
       <button
-        aria-label="Click to open planet navigation menu"
+        aria-label={`click to ${
+          showMenu ? "close" : "open"
+        } the navigation menu`}
         onClick={() => {
           if (showMenu) {
             document.body.classList.remove("overflow");
