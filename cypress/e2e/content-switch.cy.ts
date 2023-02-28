@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import hexToRgb from "cypress/utils/hex-to-rgb";
 
 describe("switching content on a planet page", () => {
   beforeEach(() => {
@@ -20,23 +21,23 @@ describe("switching content on a planet page", () => {
     cy.get("@structureContentButton").should(
       "have.css",
       "background-color",
-      "#6D2ED5"
+      hexToRgb("419EBB")
     );
 
     cy.get("@overviewContentButton").should(
       "have.css",
       "background-color",
-      "transparent"
+      "rgba(0, 0, 0, 0)"
     );
 
     cy.get("@planetImage")
       .should("have.attr", "src")
-      .should("contain", "planet-earth-internal.svg");
+      .should("contain", "planet-mercury-internal.svg");
     cy.get("@source")
       .should("have.attr", "href")
-      .should(
+      .and(
         "contain",
-        "https://en.wikipedia.org/wiki/Earth#Internal_structure"
+        "https://en.wikipedia.org/wiki/Mercury_(planet)#Internal_structure"
       );
   });
 
@@ -45,24 +46,24 @@ describe("switching content on a planet page", () => {
     cy.get("@geologyContentButton").should(
       "have.css",
       "background-color",
-      "#6D2ED5"
+      hexToRgb("419EBB")
     );
 
     cy.get("@overviewContentButton").should(
       "have.css",
       "background-color",
-      "transparent"
+      "rgba(0, 0, 0, 0)"
     );
 
     cy.get("@planetImage")
       .should("have.attr", "src")
-      .should("contain", "planet-earth.svg");
+      .should("contain", "planet-mercury.svg");
     cy.get("@source")
       .should("have.attr", "href")
-      .should("contain", "https://en.wikipedia.org/wiki/Earth#Surface");
+      .and("contain", "https://en.wikipedia.org/wiki/Mercury_(planet)#Surface");
     cy.get('[data-cy="geologyImage"]').should("exist");
     cy.get('[data-cy="geologyImage"]')
       .should("have.attr", "src")
-      .should("contain", "geology-earth.png");
+      .should("contain", "geology-mercury.png");
   });
 });
