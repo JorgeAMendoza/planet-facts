@@ -19,7 +19,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>The Planets</title>
         <meta
           name="description"
           content="Planet webiste that displays various facts about planets, built with next JS 13"
