@@ -24,6 +24,8 @@ describe("navigate to different planet/different page", () => {
         `planets/${planet.toLowerCase()}`
       );
       cy.get('[data-cy="planetName"]').should("contain.text", planet);
+      console.log(planet);
+      cy.title().should("eq", `The Planets: ${planet}`);
     });
   }
 });
