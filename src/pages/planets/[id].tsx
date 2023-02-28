@@ -109,7 +109,7 @@ const Planet = ({ planetData }: PlanetProps) => {
         </div>
 
         {/*  */}
-        <div className={styles.planetConent}>
+        <section className={styles.planetConent} id="planet-info">
           <h1 data-cy="planetName" className={styles.planetName}>
             {planetData.name}
           </h1>
@@ -125,6 +125,7 @@ const Planet = ({ planetData }: PlanetProps) => {
               data-cy="source"
               href={content.source}
               className={`${spartan.className}`}
+              aria-label={`opens new tab to wikipedia page about ${planetData.name}`}
             >
               Wikipedia{" "}
               <span>
@@ -132,10 +133,11 @@ const Planet = ({ planetData }: PlanetProps) => {
               </span>
             </a>
           </p>
-        </div>
-        <div
+        </section>
+        <section
           className={`${styles.buttonContainer} ${spartan.className}`}
           data-planet={planetData.name}
+          id="content-switch"
         >
           <button
             onClick={() => setInfoDisplay("overview")}
@@ -176,9 +178,9 @@ const Planet = ({ planetData }: PlanetProps) => {
             </p>
             <p className={styles.buttonMobileText}>surface</p>
           </button>
-        </div>
+        </section>
 
-        <section className={styles.planetStats}>
+        <section className={styles.planetStats} id="planet-stats">
           <div className={styles.stat}>
             <p className={spartan.className}>rotation time</p>
             <p data-cy="rotationTime">{planetData.rotation}</p>
