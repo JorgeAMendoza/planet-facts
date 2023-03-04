@@ -1,38 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Planet Information Website created with Next JS and CSS Modules
 
-## Getting Started
+<div align="center"><img src="./project-images/presentation.gif" width=600 alt="gif of planet being demonstrated"></div>
 
-First, run the development server:
+The goal of the project is to create a functional website which displays various facts and images about planets in our solar system.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Three goals I aimed to achieve with this project are:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Get practice with Next JS by understanding how to set routes, create static pages, and get data from an API on each page with the props.
+2. Use CSS modules to style the application instead of frameworks such as styled-components or bootstrap.
+3. Make every webpage accessible to the best of my abilites.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Techstack Used
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Project was boostrapped with [create-next-app](https://nextjs.org/docs/api-reference/create-next-app) using the [Typescript](https://www.typescriptlang.org/) template, using most of the default configurations provided by the script.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The following are the main tools used to create the application.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [NextJS](https://nextjs.org/), a React framework that is used to create server-side rendered applications.
+- [React](https://reactjs.org/), a JavaScript library for building user interfaces
+- [Cypress](https://docs.cypress.io/guides/overview/why-cypress), a front-end testing tool to create integration and unit test.
 
-## Learn More
+Other tools used is [css-modules](https://github.com/css-modules/css-modules) which is a way to write css in a more modular fashion. Libraries used include [Axios](https://axios-http.com/docs/intro) which is used to call API endpoints.
 
-To learn more about Next.js, take a look at the following resources:
+## Running the Application
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Once the application has been cloned to your local machine, navigate to the project directoy and run `npm i ` to install dependencies.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To run the application in **development mode**, run the command `npm run dev`, you can reach the page at [localhost:3000](http://localhost:3000)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To run the production build of the applicaiton, run the command ``

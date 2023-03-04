@@ -2,6 +2,13 @@
   "name": "planet-facts",
   "version": "0.1.0",
   "private": true,
+  "keywords": [
+    "react",
+    "nextjs",
+    "cypress",
+    "typescript",
+    "css-modules"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
