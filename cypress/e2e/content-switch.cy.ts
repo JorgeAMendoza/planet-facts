@@ -88,3 +88,5 @@ describe("switching content on a planet page", () => {
     );
   });
 });
+
+export {};

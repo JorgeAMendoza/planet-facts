@@ -38,3 +38,5 @@ describe("on first page load", () => {
     cy.get("@averageTemp").should("contain.text", "430°c");
   });
 });
+
+export {};
