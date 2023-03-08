@@ -114,8 +114,8 @@
     "radius": "69,911 KM",
     "temperature": "-108°c",
     "images": {
-      "planet": "/planets/jupiter/planets-jupiter.svg",
-      "internal": "/planets/jupiter/planets-jupiter-internal.svg",
+      "planet": "/planets/jupiter/planet-jupiter.svg",
+      "internal": "/planets/jupiter/planet-jupiter-internal.svg",
       "geology": "/planets/jupiter/geology-jupiter.png"
     }
   },
@@ -188,7 +188,7 @@
     "images": {
       "planet": "/planets/neptune/planet-neptune.svg",
       "internal": "/planets/neptune/planet-neptune-internal.svg",
-      "geology": "planets/neptune/geology-neptune.png"
+      "geology": "/planets/neptune/geology-neptune.png"
     }
   }
 ]
