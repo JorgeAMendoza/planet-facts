@@ -1,17 +1,16 @@
 /// <reference types="cypress" />
 
-const planets = [
-  "Mercury",
-  "Venus",
-  "Mars",
-  "Jupiter",
-  "Saturn",
-  "Uranus",
-  "Neptune",
-  "Earth",
-];
-
 describe("navigate to different planet/different page", () => {
+  const planets = [
+    "Mercury",
+    "Venus",
+    "Mars",
+    "Jupiter",
+    "Saturn",
+    "Uranus",
+    "Neptune",
+    "Earth",
+  ];
   beforeEach(() => {
     cy.visit("/");
   });
@@ -29,3 +28,5 @@ describe("navigate to different planet/different page", () => {
     });
   }
 });
+
+export {};

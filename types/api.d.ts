@@ -25,4 +25,4 @@ interface Planet {
   };
 }
 
-export type PlanetAPIResponse = { planetData: Planet[] };
+export type PlanetAPIResponse = Planet[];
