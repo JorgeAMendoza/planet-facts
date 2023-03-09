@@ -1,0 +1,596 @@
+.planetPage {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 5rem 25.6rem 23.5rem 21.6rem;
+  grid-template-areas:
+    "contentButton contentButton contentButton contentButton"
+    "planetImage planetImage planetImage planetImage"
+    "planetContent planetContent planetContent planetContent"
+    "stats stats stats stats";
+  gap: 2.25rem;
+  padding-bottom: 4.5rem;
+}
+
+.buttonContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-area: contentButton;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  min-height: 5rem;
+  padding: 0 0.2rem;
+}
+
+.contentButton {
+  background-color: transparent;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1.9px;
+  opacity: 0.5;
+  position: relative;
+}
+
+.contentButton p::before {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 8rem;
+  left: 49%;
+  top: 2.7rem;
+  transform: translate(-50%, 0);
+  display: none;
+}
+
+.contentButton.buttonSelected {
+  opacity: 1;
+}
+.contentButton.buttonSelected p::before {
+  display: block;
+}
+
+.buttonContainer[data-planet="Earth"] .contentButton.buttonSelected p::before {
+  background-color: var(--earth-color);
+}
+
+.buttonContainer[data-planet="Mercury"]
+  .contentButton.buttonSelected
+  p::before {
+  background-color: var(--mercury-color);
+}
+
+.buttonContainer[data-planet="Venus"] .contentButton.buttonSelected p::before {
+  background-color: var(--venus-color);
+}
+
+.buttonContainer[data-planet="Mars"] .contentButton.buttonSelected p::before {
+  background-color: var(--mars-color);
+}
+
+.buttonContainer[data-planet="Saturn"] .contentButton.buttonSelected p::before {
+  background-color: var(--saturn-color);
+}
+
+.buttonContainer[data-planet="Jupiter"]
+  .contentButton.buttonSelected
+  p::before {
+  background-color: var(--jupiter-color);
+}
+
+.buttonContainer[data-planet="Uranus"] .contentButton.buttonSelected p::before {
+  background-color: var(--uranus-color);
+}
+
+.buttonContainer[data-planet="Neptune"]
+  .contentButton.buttonSelected
+  p::before {
+  background-color: var(--neptune-color);
+}
+
+.buttonTabletText,
+.buttonMobileText {
+  position: relative;
+}
+
+.buttonTabletText {
+  display: none;
+}
+
+.planetImage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: planetImage;
+  height: 26rem;
+  height: 100%;
+}
+
+.planetImage img {
+  height: auto;
+}
+
+.geologyImage {
+  position: absolute;
+  top: 50%;
+}
+
+.geologyImage > img {
+  width: 8rem;
+  height: 10.9rem;
+}
+
+.planetImage[data-planet="Mercury"] > img {
+  width: 11.1rem;
+}
+
+.planetImage[data-planet="Venus"] > img {
+  width: 15.4rem;
+}
+
+.planetImage[data-planet="Earth"] > img {
+  width: 17.3rem;
+}
+
+.planetImage[data-planet="Mars"] > img {
+  width: 12.9rem;
+}
+
+.planetImage[data-planet="Jupiter"] > img {
+  width: 22.4rem;
+}
+
+.planetImage[data-planet="Saturn"] > img {
+  width: 25.6rem;
+}
+
+.planetImage[data-planet="Uranus"] > img {
+  width: 17.6rem;
+}
+
+.planetImage[data-planet="Neptune"] > img {
+  width: 17.3rem;
+}
+
+.planetName {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 400;
+  margin-block-end: 1.2rem;
+  text-transform: uppercase;
+}
+
+.planetConent {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  grid-area: planetContent;
+  font-size: 1.1rem;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.planetText {
+  line-height: 22px;
+}
+
+.planetSource {
+  opacity: 0.5;
+  letter-spacing: 0.9px;
+  margin-top: auto;
+}
+
+.planetSource a {
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+}
+
+.planetConent a img {
+  opacity: 1;
+  margin-left: 0.3rem;
+}
+
+.planetStats {
+  grid-area: stats;
+  margin-bottom: 4rem;
+  padding: 0 0.5rem;
+  margin-block-start: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.stat {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 4.8rem;
+}
+
+.stat p:first-of-type {
+  opacity: 0.5;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding-bottom: 0.1rem;
+  padding-left: 2.2rem;
+}
+
+.stat p:last-of-type {
+  font-size: 2rem;
+  letter-spacing: -0.75px;
+  padding-bottom: 0.6rem;
+  padding-right: 2.3rem;
+  text-transform: uppercase;
+}
+
+/* tablet queries (768px) */
+@media screen and (min-width: 768px) {
+  .planetPage {
+    padding-top: 0.5rem;
+    grid-template-rows: 42.4rem auto 8.8rem;
+    grid-template-areas:
+      "planetImage planetImage planetImage planetImage"
+      "planetContent planetContent contentButton contentButton"
+      "stats stats stats stats";
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 0;
+  }
+
+  .planetImage {
+    padding-top: 4.5rem;
+  }
+
+  .geologyImage > img {
+    width: 13.3rem;
+    height: 16.9rem;
+  }
+
+  .contentButton.buttonSelected p::before {
+    display: none;
+  }
+
+  .planetImage[data-planet="Mercury"] > img {
+    width: 18.4rem;
+  }
+
+  .planetImage[data-planet="Venus"] > img {
+    width: 25.3rem;
+  }
+
+  .planetImage[data-planet="Earth"] > img {
+    width: 28.5rem;
+  }
+
+  .planetImage[data-planet="Mars"] > img {
+    width: 21.3rem;
+  }
+
+  .planetImage[data-planet="Jupiter"] > img {
+    width: 36.9rem;
+  }
+
+  .planetImage[data-planet="Saturn"] > img {
+    width: 42.2rem;
+  }
+
+  .planetImage[data-planet="Uranus"] > img {
+    width: 29rem;
+  }
+
+  .planetImage[data-planet="Neptune"] > img {
+    width: 28.5rem;
+  }
+
+  .planetConent {
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 0;
+    padding-top: 0.5rem;
+    width: 100%;
+  }
+
+  .planetName {
+    text-align: left;
+    font-size: 4.8rem;
+    margin-bottom: 1.9rem;
+  }
+
+  .planetText {
+    margin-block-end: 3.8rem;
+  }
+
+  .buttonContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .buttonMobileText {
+    display: none;
+  }
+
+  .buttonTabletText {
+    display: block;
+  }
+
+  .buttonContainer {
+    border-bottom: none;
+    width: 100%;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.7rem;
+    padding-top: 6.4rem;
+  }
+
+  .contentButton {
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 28.1rem;
+    height: 4rem;
+    opacity: 1;
+    padding-left: 2rem;
+  }
+
+  .buttonTabletText {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contentButton .buttonTabletText > span:first-of-type {
+    opacity: 0.5;
+    width: 2rem;
+  }
+
+  .contentButton.buttonSelected span::before {
+    display: none;
+  }
+
+  .contentButton.buttonSelected {
+    border: none;
+  }
+
+  .buttonContainer[data-planet="Mercury"] .contentButton.buttonSelected {
+    background-color: var(--mercury-color);
+  }
+  .buttonContainer[data-planet="Venus"] .contentButton.buttonSelected {
+    background-color: var(--venus-color);
+  }
+  .buttonContainer[data-planet="Earth"] .contentButton.buttonSelected {
+    background-color: var(--earth-color);
+  }
+
+  .buttonContainer[data-planet="Mars"] .contentButton.buttonSelected {
+    background-color: var(--mars-color);
+  }
+
+  .buttonContainer[data-planet="Jupiter"] .contentButton.buttonSelected {
+    background-color: var(--jupiter-color);
+  }
+
+  .buttonContainer[data-planet="Saturn"] .contentButton.buttonSelected {
+    background-color: var(--saturn-color);
+  }
+
+  .buttonContainer[data-planet="Uranus"] .contentButton.buttonSelected {
+    background-color: var(--uranus-color);
+  }
+
+  .buttonContainer[data-planet="Neptune"] .contentButton.buttonSelected {
+    background-color: var(--neptune-color);
+  }
+
+  .planetStats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(16.4rem, 1fr));
+    grid-auto-rows: 8.8rem;
+    justify-content: start;
+    gap: 1rem;
+    margin-block-start: 0.5rem;
+    padding: 0;
+  }
+
+  .planetStats > * {
+    margin-block-end: 0;
+  }
+
+  .stat {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding-left: 1.5rem;
+    padding-top: 1.9rem;
+  }
+
+  .stat p:first-of-type {
+    padding: 0;
+  }
+
+  .stat p:last-of-type {
+    padding: 0;
+    font-size: 2.4rem;
+    padding-top: 0.6rem;
+  }
+}
+
+/* laptop queries (1024px) */
+@media screen and (min-width: 1024px) {
+  .planetPage {
+    width: 100%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 37.6rem 1fr 12.8rem;
+    grid-template-areas:
+      "planetImage planetContent"
+      "planetImage contentButton"
+      "stats stats";
+    height: 81.2rem;
+    margin-block-start: 7.45rem;
+    padding: 0;
+  }
+
+  .planetImage {
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+    align-self: center;
+    padding: 0;
+    margin-left: -9.6rem;
+    margin-top: -3.8rem;
+  }
+
+  .planetImage[data-planet="Saturn"] {
+    margin-top: -0.7rem;
+  }
+
+  .geologyImage > img {
+    width: 16.3rem;
+    height: 19.9rem;
+  }
+
+  .planetName {
+    font-size: 8rem;
+  }
+
+  .planetConent {
+    font-size: 1.4rem;
+    padding-left: 1.2rem;
+    padding-top: 4.2rem;
+  }
+
+  .planetText {
+    line-height: 25px;
+    margin-block-end: 0;
+  }
+
+  .planetSource {
+    font-size: 1.4rem;
+  }
+
+  .planetName {
+    margin-block-end: 1.6rem;
+  }
+
+  .buttonContainer {
+    padding: 0;
+    padding-left: 1.2rem;
+    padding-top: 1.8rem;
+    justify-content: flex-start;
+    align-items: start;
+    font-size: 1.2rem;
+    gap: 1.7rem;
+  }
+
+  .contentButton {
+    width: 100%;
+    height: 4.8rem;
+    font-size: 1.2rem;
+    padding-left: 2.8rem;
+    padding-top: 0.3rem;
+  }
+
+  .contentButton .buttonTabletText {
+    gap: 1.8rem;
+  }
+
+  .contentButton .buttonTabletText > span:first-of-type {
+    width: 3rem;
+  }
+
+  .contentButton .buttonTabletText > span:last-of-type {
+    letter-spacing: 2.5px;
+  }
+
+  .planetStats {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    grid-template-columns: repeat(4, 25.5rem);
+    justify-content: space-between;
+    margin-top: -0.5rem;
+  }
+
+  .stat {
+    height: 12.8rem;
+    padding-left: 2.2rem;
+    padding-top: 2.4rem;
+  }
+
+  .stat p:first-of-type {
+    font-size: 1.1rem;
+  }
+
+  .stat p:last-of-type {
+    font-size: 4rem;
+    letter-spacing: -1.5px;
+  }
+
+  .planetImage[data-planet="Mercury"] > img {
+    width: 29rem;
+  }
+
+  .planetImage[data-planet="Venus"] > img {
+    width: 40rem;
+  }
+
+  .planetImage[data-planet="Earth"] > img {
+    width: 45rem;
+  }
+
+  .planetImage[data-planet="Mars"] > img {
+    width: 33.6rem;
+  }
+
+  .planetImage[data-planet="Jupiter"] > img {
+    width: 58.2rem;
+  }
+
+  .planetImage[data-planet="Saturn"] > img {
+    width: 66.609rem;
+  }
+
+  .planetImage[data-planet="Uranus"] > img {
+    width: 45.8rem;
+  }
+
+  .planetImage[data-planet="Neptune"] > img {
+    width: 45rem;
+  }
+
+  .planetImage[data-planet="Mercury"] .geologyImage {
+    top: 79%;
+  }
+
+  .planetImage[data-planet="Venus"] .geologyImage {
+    top: 70%;
+  }
+
+  .planetImage[data-planet="Earth"] .geologyImage {
+    top: 68%;
+  }
+
+  .planetImage[data-planet="Mars"] .geologyImage {
+    top: 74%;
+  }
+
+  .planetImage[data-planet="Jupiter"] .geologyImage {
+    top: 64%;
+  }
+
+  .planetImage[data-planet="Saturn"] .geologyImage {
+    top: 60%;
+  }
+
+  .planetImage[data-planet="Uranus"] .geologyImage {
+    top: 68%;
+  }
+
+  .planetImage[data-planet="Neptune"] .geologyImage {
+    top: 68%;
+  }
+}
