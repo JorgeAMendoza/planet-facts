@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import { ReactNode, useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import styles from "./Layout.module.css";
@@ -12,12 +13,14 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [showMenu, setShowMenu] = useState(false);
   const isMobile = useIsMobile();
+
   const router = useRouter();
 
   useEffect(() => {
     if (!isMobile) document.body.classList.remove("overflow");
     setShowMenu(false);
   }, [isMobile]);
+
 
   useEffect(() => {
     const handleChange = () => {
