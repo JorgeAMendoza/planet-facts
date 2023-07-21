@@ -1,8 +1,9 @@
 import Head from "next/head";
-import { ReactNode, useCallback, useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import styles from "./Layout.module.css";
 import useIsMobile from "@/hooks/useMedia";
+import { useRouter } from "next/router";
 
 interface LayoutProps {
   children: ReactNode;
@@ -11,11 +12,24 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [showMenu, setShowMenu] = useState(false);
   const isMobile = useIsMobile();
+  const router = useRouter();
 
   useEffect(() => {
     if (!isMobile) document.body.classList.remove("overflow");
     setShowMenu(false);
   }, [isMobile]);
+
+  useEffect(() => {
+    const handleChange = () => {
+      setShowMenu(false);
+    };
+
+    router.events.on("routeChangeStart", handleChange);
+
+    return () => {
+      router.events.off("routeChangeStart", handleChange);
+    };
+  }, [router.events]);
   return (
     <div>
       <Head>
